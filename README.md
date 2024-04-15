@@ -1,4 +1,4 @@
-# Herramientas-_Big-_Data
+# Herramientas_Big_Data
 Trabajamos con herramientas de Big Data
 
 # Practica Integradora
@@ -24,7 +24,7 @@ Es importante mencionar que el entorno completo consume muchos recursos de su eq
 
 Como primer paso fundamental, para implementar debemos clonar el repositorio en nuestra máquina virtual:
 
-git clone https://github.com/Rolizet/Herramientas-_Big-_Data.git
+git clone https://github.com/Rolizet/Herramientas_Big_Data.git
 
 Ejecute `docker network inspect` en la red (por ejemplo, `docker-hadoop-spark-hive_default`) para encontrar la IP en la que se publican las interfaces de hadoop. Acceda a estas interfaces con las siguientes URL:
 
