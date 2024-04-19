@@ -26,6 +26,8 @@ Como primer paso fundamental, para implementar debemos clonar el repositorio en 
 
 git clone https://github.com/Rolizet/Herramientas-_Big-_Data.git
 
+![](imagenes/Imagen%201.jpeg)
+
 Ejecute `docker network inspect` en la red (por ejemplo, `docker-hadoop-spark-hive_default`) para encontrar la IP en la que se publican las interfaces de hadoop. Acceda a estas interfaces con las siguientes URL:
 
 ```
