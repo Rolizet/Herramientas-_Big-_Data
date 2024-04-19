@@ -26,7 +26,7 @@ Como primer paso fundamental, para implementar debemos clonar el repositorio en 
 
     git clone https://github.com/Rolizet/Herramientas_Big_Data.git
 
-![](Imagenes/imagen1.png)
+![](Imagenes/Imagen1.png)
 
 Ejecute `docker network inspect` en la red (por ejemplo, `docker-hadoop-spark-hive_default`) para encontrar la IP en la que se publican las interfaces de hadoop. Acceda a estas interfaces con las siguientes URL:
 
@@ -55,6 +55,9 @@ Ejecutamos la version 1 del entorno docker-compose:
 ```
 sudo docker-compose -f docker-compose-v1.yml up -d
 ```
+
+![](Imagenes/imagen2.png)
+
 
 ### Copia de los archivos ubicados en 'Datasets' al contenedor 'namenode'
 
