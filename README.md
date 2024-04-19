@@ -1,4 +1,4 @@
-# Herramientas-_Big-_Data
+# Herramientas_Big_Data
 Trabajamos con herramientas de Big Data
 
 # Practica Integradora
@@ -24,7 +24,7 @@ Es importante mencionar que el entorno completo consume muchos recursos de su eq
 
 Como primer paso fundamental, para implementar debemos clonar el repositorio en nuestra máquina virtual:
 
-git clone https://github.com/Rolizet/Herramientas-_Big-_Data.git
+git clone https://github.com/Rolizet/Herramientas_Big_Data.git
 
 ![](imagenes/Imagen%201.jpeg)
 
