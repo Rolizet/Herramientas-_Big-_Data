@@ -1,8 +1,8 @@
 # Herramientas_Big_Data
 Trabajamos con herramientas de Big Data
 
-!<p>
-  <img src="./imagenes/bigdata17.png" alt="HDFS3.1" width="500" height="400" />
+<p>
+  <img src="./imagenes/bigdata17.png" alt="bigdata17" width="500" height="400" />
 </p>
 
 Durante esta practica la idea es imitar un ambiente de trabajo. Desde un área de innovación, solicitan construir un MVP(Producto viable mínimo) de un ambiente de Big Data donde se deban cargar unos archivos CSV que anteriormente se utilizaban en un datawarehouse en MySQl, pero ahora en un entorno de Hadoop.
