@@ -58,7 +58,9 @@ Neo4j: http://<IP_Anfitrion>:7474
 
 ## 1) HDFS
 
-![](Imagenes/imagen18.png)
+<p>
+  <img src="./Imagenes/imagen18.png" alt="imagen18" width="500" height="200" />
+</p>
 
 ### Ejecución de entorno
 
@@ -149,7 +151,9 @@ http://xxx.xxx.x.xxx:9870/
 
 2) Hive
 
-![](Imagenes/imagen19.png)
+<p>
+  <img src="./Imagenes/imagen19.png" alt="imagen19" width="500" height="200" />
+</p>
 
 Aqui debemops crear tablas en Hive a partir de los csv ingestados en HDFS.
 Para este paso, debemos usar el entorno docker-compose-v2 y es necesario detener el anterior. Vamos a detener todos los contenedores:
@@ -213,7 +217,9 @@ select COUNT(*) from venta;
 
 ## 3) Formatos de Almacenamiento
 
-![](Imagenes/imagen20.png)
+<p>
+  <img src="./Imagenes/imagen20.png" alt="imagen20" width="500" height="200" />
+</p>
 
 Vamos a crear una nueva base de datos en la cual vamos a alojar todas las tablas creadas en el punto 2, almacenadas en formato **Parquet + Snappy** aplicando particiones para algunas tablas.
 
@@ -272,7 +278,9 @@ select COUNT(*) from proveedor;
 
 ## 4) SQL
 
-![](Imagenes/imagen21.png)
+<p>
+  <img src="./Imagenes/imagen21.png" alt="imagen21" width="500" height="200" />
+</p>
 
 En esta etapa del trabajo vamos a crear indices. Es importante tener en cuenta que la mejora en la velocidad de consulta que puede proporcionar un índice tiene el costo del procesamiento adicional para crear el índice y el espacio en disco para almacenar las referencias del índice.
 
@@ -313,7 +321,9 @@ select IdCliente, SUM(Precio * Cantidad) FROM venta GROUP BY IdCliente;
 
 ## 5) No-SQL
 
-![](Imagenes/imagen22.png)
+<p>
+  <img src="./Imagenes/imagen22.png" alt="imagen22" width="500" height="200" />
+</p>
 
 ### Ejecución de entorno
 
