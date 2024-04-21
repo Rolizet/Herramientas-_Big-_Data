@@ -1,11 +1,13 @@
 # Herramientas_Big_Data
 Trabajamos con herramientas de Big Data
 
-![](Imagenes/imagen17.png)
+!<p>
+  <img src="./img/bigdata17.png" alt="HDFS3.1" width="300" height="200" />
+</p>
 
-Durante esta practica la idea es imitar un ambiente de trabajo. Desde un área de innovación solicitan construir un MVP(Producto viable mínimo) de un ambiente de Big Data donde se deban cargar unos archivos CSV que anteriormente se utilizaban en un datawarehouse en MySQl, pero ahora en un entorno de Hadoop.
+Durante esta practica la idea es imitar un ambiente de trabajo. Desde un área de innovación, solicitan construir un MVP(Producto viable mínimo) de un ambiente de Big Data donde se deban cargar unos archivos CSV que anteriormente se utilizaban en un datawarehouse en MySQl, pero ahora en un entorno de Hadoop.
 
-Desde la gerencia de Infraestructura no están muy convencidos de utilizar esta tecnología por lo que no se asigno presupuesto alguna para esta iniciativa, de forma tal que por el momento no es posible utilizar un Vendor(Azure, AWS, Google) para implementar dicho entorno. Es por esto, que todo el MVP se deberá implementar utilizando Docker de forma tal que se pueda hacer una demo al sector de infraestructura mostrando las ventajas de utilizar tecnologías de Big Data.
+Desde la gerencia de Infraestructura no están muy convencidos de utilizar esta tecnología, por lo que no se asigno presupuesto alguna para esta iniciativa, de forma tal que por el momento no es posible utilizar un Vendor(Azure, AWS, Google) para implementar dicho entorno. Es por esto, que todo el MVP se deberá implementar utilizando Docker de forma tal que se pueda hacer una demo al sector de infraestructura mostrando las ventajas de utilizar tecnologías de Big Data.
 
 
 # Entorno Docker con Hadoop, Spark y Hive
@@ -29,6 +31,13 @@ Primer paso fundamental, para implementar debemos clonar el repositorio en nuest
 
     git clone https://github.com/Rolizet/Herramientas_Big_Data.git
 
+Luego, nos ubicamos en la carpeta de la practica con el comando cd:
+
+```
+cd DS-M4-Herramientas_Big_Data
+```
+
+
 ![](Imagenes/Imagen1.png)
 
 Ejecute `docker network inspect` en la red (por ejemplo, `docker-hadoop-spark-hive_default`) para encontrar la IP en la que se publican las interfaces de hadoop. Acceda a estas interfaces para ver el proceso con las siguientes URL:
@@ -50,12 +59,6 @@ Neo4j: http://<IP_Anfitrion>:7474
 ![](Imagenes/imagen18.png)
 
 ### Ejecución de entorno
-
-En primer lugar nos ubicamos en la carpeta de la practica con el comando cd:
-
-```
-cd DS-M4-Herramientas_Big_Data
-```
 
 Ejecutamos la version 1 del entorno docker-compose: 
 
@@ -128,7 +131,7 @@ Pegamos los archivos:
 hdfs dfs -put /home/Datasets/* /data
 ```
 
-**Podemos ingresar a la interfaz de hadoop para verificar que los archivos esten en el HDFS, utilizando nuestro navegador pegamos la IP de nuestra máquina virtual y luego el puerto :9870. Un vez dentro, nos dirigimos a *Utilities > Browse the file system:* si cumpliste con todos los pasos anteriores, deberias visualizar la carpeta data con los archivos .csv **
+**Podemos ingresar a la interfaz de hadoop para verificar que los archivos esten en el HDFS. Para hacerlo podemos usar nuestro navegador, pegamos la IP de nuestra máquina virtual y luego el puerto :9870. Un vez dentro, nos dirigimos a *Utilities > Browse the file system. Si cumpliste con todos los pasos anteriores, deberias visualizar la carpeta data con los archivos .csv **
 
 Ejemplo:
 
@@ -417,6 +420,7 @@ hbase shell
 		get 'album','label1'
 
 2) MongoDB
+
 Instrucciones:
 
 1) Copiamos los archivos a mongodb:
@@ -510,3 +514,23 @@ ADD JAR hdfs://namenode:9000/tmp/hive/mongo-hadoop-core-2.0.2.jar;
 ADD JAR hdfs://namenode:9000/tmp/hive/mongo-hadoop-hive-2.0.2.jar;
 ADD JAR hdfs://namenode:9000/tmp/hive/mongo-hadoop-spark-2.0.2.jar;
 ```
+
+3) Neo4J
+Revisa el siguiente link para comprender que haremos en la siguiente actividad:
+
+	https://neo4j.com/docs/graph-data-science/current/algorithms/dijkstra-source-target/
+
+Uso del algoritmo Dijkstra:
+
+Es utilizado para encontrar el camino mas corto desde un vertice(nodos) de origen dado a todos los demas vertices en un grafo ponderado donde cada arista tiene asociado un peso o valor numerico. El peso representa alguna medida, por ejemplo: distancia. En los soguientes pasos de la actividad, vamos a ilustrar un ejemplo en un grafo.
+
+1) Levantamos nuestro entorno docker-compose-v3.yml
+
+```
+sudo docker-compose -f docker-compose-v3.yml up -d
+```
+
+2) Una vez dentro del bash de hive-server, ingresamos a hive con los permisos necesarios realizados en el paso anterior de mongo para leer el archivo iris.hql, hago lo siguiente para crear el grafo en la base de datos Neo4j: 
+
+CREATE (a:Location {name: 'A'}), (b:Location {name: 'B'}), (c:Location {name: 'C'}), (d:Location {name: 'D'}), (e:Location {name: 'E'}), (f:Location {name: 'F'}), (a)-[:ROAD {cost: 50}]->(b), (b)-[:ROAD {cost: 50}]->(a), (a)-[:ROAD {cost: 50}]->(c), (c)-[:ROAD {cost: 50}]->(a), (a)-[:ROAD {cost: 100}]->(d), (d)-[:ROAD {cost: 100}]->(a), (b)-[:ROAD {cost: 40}]->(d), (d)-[:ROAD {cost: 40}]->(b), (c)-[:ROAD {cost: 40}]->(d), (d)-[:ROAD {cost: 40}]->(c), (c)-[:ROAD {cost: 80}]->(e), (e)-[:ROAD {cost: 80}]->(c), (d)-[:ROAD {cost: 30}]->(e), (e)-[:ROAD {cost: 30}]->(d), (d)-[:ROAD {cost: 80}]->(f), (f)-[:ROAD {cost: 80}]->(d), (e)-[:ROAD {cost: 40}]->(f), (f)-[:ROAD {cost: 40}]->(e);
+
