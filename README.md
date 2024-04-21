@@ -2,7 +2,7 @@
 Trabajamos con herramientas de Big Data
 
 <p>
-  <img src="./imagenes/bigdata17.png" alt="bigdata17" width="500" height="400" />
+  <img src="./Imagenes/bigdata17.png" alt="bigdata17" width="500" height="400" />
 </p>
 
 Durante esta practica la idea es imitar un ambiente de trabajo. Desde un área de innovación, solicitan construir un MVP(Producto viable mínimo) de un ambiente de Big Data donde se deban cargar unos archivos CSV que anteriormente se utilizaban en un datawarehouse en MySQl, pero ahora en un entorno de Hadoop.
@@ -38,7 +38,9 @@ cd DS-M4-Herramientas_Big_Data
 ```
 
 
-![](Imagenes/Imagen1.png)
+<p>
+  <img src="./Imagenes/imagen18.png" alt="imagen18" width="500" height="400" />
+</p>
 
 Ejecute `docker network inspect` en la red (por ejemplo, `docker-hadoop-spark-hive_default`) para encontrar la IP en la que se publican las interfaces de hadoop. Acceda a estas interfaces para ver el proceso con las siguientes URL:
 
