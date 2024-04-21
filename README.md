@@ -37,11 +37,6 @@ Luego, nos ubicamos en la carpeta de la practica con el comando cd:
 cd DS-M4-Herramientas_Big_Data
 ```
 
-
-<p>
-  <img src="./Imagenes/imagen18.png" alt="imagen18" width="500" height="200" />
-</p>
-
 Ejecute `docker network inspect` en la red (por ejemplo, `docker-hadoop-spark-hive_default`) para encontrar la IP en la que se publican las interfaces de hadoop. Acceda a estas interfaces para ver el proceso con las siguientes URL:
 
 ```
@@ -544,5 +539,4 @@ sudo docker-compose -f docker-compose-v3.yml up -d
 
 2) Una vez dentro del bash de hive-server, ingresamos a hive con los permisos necesarios realizados en el paso anterior de mongo para leer el archivo iris.hql, hago lo siguiente para crear el grafo en la base de datos Neo4j: 
 
-CREATE (a:Location {name: 'A'}), (b:Location {name: 'B'}), (c:Location {name: 'C'}), (d:Location {name: 'D'}), (e:Location {name: 'E'}), (f:Location {name: 'F'}), (a)-[:ROAD {cost: 50}]->(b), (b)-[:ROAD {cost: 50}]->(a), (a)-[:ROAD {cost: 50}]->(c), (c)-[:ROAD {cost: 50}]->(a), (a)-[:ROAD {cost: 100}]->(d), (d)-[:ROAD {cost: 100}]->(a), (b)-[:ROAD {cost: 40}]->(d), (d)-[:ROAD {cost: 40}]->(b), (c)-[:ROAD {cost: 40}]->(d), (d)-[:ROAD {cost: 40}]->(c), (c)-[:ROAD {cost: 80}]->(e), (e)-[:ROAD {cost: 80}]->(c), (d)-[:ROAD {cost: 30}]->(e), (e)-[:ROAD {cost: 30}]->(d), (d)-[:ROAD {cost: 80}]->(f), (f)-[:ROAD {cost: 80}]->(d), (e)-[:ROAD {cost: 40}]->(f), (f)-[:ROAD {cost: 40}]->(e);
 
